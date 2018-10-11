@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import application.MazeDisplayer?>
+<!--MazeDisplayer fx:id="mazeDisplayer"-->
+<!-- <?import application.MazeDisplayer?> -->
+
+<BorderPane prefHeight="376.0" prefWidth="500.0" style="-fx-background-image: url('file:./resources/background.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainWindowController">
+   <top>
+      <MenuBar prefHeight="17.0" prefWidth="436.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#readLevel" text="Choose level" />
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox focusTraversable="false" prefHeight="200.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button focusTraversable="false" mnemonicParsing="false" onAction="#start" prefHeight="25.0" prefWidth="120.0" text="Change level">
+               <VBox.margin>
+                  <Insets right="30.0" top="50.0" />
+               </VBox.margin>
+            </Button>
+            <Button focusTraversable="false" mnemonicParsing="false" onAction="#restart" prefHeight="25.0" prefWidth="120.0" text="Restart">
+               <VBox.margin>
+                  <Insets right="30.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Status" />
+         </children>
+      </HBox>
+   </bottom>
+   <right>
+      <MazeDisplayer fx:id="mazeDisplayer" height="500.0" width="500.0" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>
